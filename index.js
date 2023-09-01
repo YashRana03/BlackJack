@@ -2,8 +2,7 @@ let player = {
     name: "Yash",
     chips: 200
 }
-let link1 = "./images/spades_1.png";
-let link2 = "./images/spades_2.png";
+// Variables initialisation
 let cards = []
 let sum = 0
 let hasBlackJack = false
@@ -16,11 +15,13 @@ let playerEl = document.getElementById("player-el")
 
 playerEl.textContent = player.name + ": $" + player.chips
 
+// Return a random  number between 1 and 11;
 function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13) +1
     if (randomNumber > 10) {
         return 10
     } 
+    // If a the number 1 is drawn this decides to return 11 or 1 by assessing if the player will go bust or not
     else if (randomNumber == 1) {
         if((sum + 11) < 21) {
             
@@ -36,6 +37,7 @@ function getRandomCard() {
     }
 }
 
+// Starts a new game 
 function startGame() {
      let ele = document.querySelectorAll("#abc");
      if(ele != null) {
@@ -59,6 +61,7 @@ function startGame() {
     renderGame()
 }
 
+//Renders the game to the screen by displaying the cards sum, and helpful message
 function renderGame() {
     cardsEl.textContent = "Cards: "
     for (let i = 0; i < cards.length; i++) {
@@ -78,22 +81,21 @@ function renderGame() {
     messageEl.textContent = message
 }
 
-
+//Draws a new card and add it to the cards drawn by the player
 function newCard() {
     if (isAlive === true && hasBlackJack === false) {
-
-        
-
 
         let card = getRandomCard()
         renderCards(card);
         sum += card
         cards.push(card)
+        
         renderGame()        
     }
 
 }
 
+// Display the physical cards onto the screen
 function renderCards(number) {
     let img = document.createElement("img");
     img.src = `./images/spades_${number}.png`;
@@ -101,4 +103,5 @@ function renderCards(number) {
     
     img.classList.add("imageFeatures");
     document.body.appendChild(img);
+    
 }

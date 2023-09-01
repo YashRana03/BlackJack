@@ -5,6 +5,8 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
+    overflow: hidden;
+    
 }
 
 h1 {
@@ -29,9 +31,11 @@ button {
     width: 100;
     margin: 10px;
     margin-top: 30px;
-    animation: slideup 1s ease;
+    animation: slideup 0.7s ease-in-out;
 
 }
+
+
 
 @keyframes slideup {
 
@@ -44,3 +48,4 @@ button {
     }
     
 }
+
