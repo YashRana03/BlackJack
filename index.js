@@ -20,12 +20,18 @@ function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13) +1
     if (randomNumber > 10) {
         return 10
-    } else if (randomNumber === 1) {
-        if(sum + 11 < 21) {
+    } 
+    else if (randomNumber == 1) {
+        if((sum + 11) < 21) {
+            
             return 11;
         }
-        
-    } else {
+        else {
+            return 1;
+        }
+            
+    } 
+    else {
         return randomNumber
     }
 }
@@ -41,7 +47,7 @@ function startGame() {
             
          }
      }
-    
+    sum = 0;
     isAlive = true
     hasBlackJack = false;
     let firstCard = getRandomCard()

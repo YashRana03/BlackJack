@@ -1,2 +1,2 @@
 # BlackJack
- A simple BlackJack game
+ A simple BlackJack game using HTML, CSS and JavaScrit.
